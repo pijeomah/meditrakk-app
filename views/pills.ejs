@@ -11,13 +11,25 @@
     <h1>Pills</h1>
     <ul>
     <% pills.forEach( el => { %>
-        <li class='todoItem' data-id='<%=el._id%>'>
-            <span><%= el.pills %></span>
-            <span class='del'> Delete </span>
+        <li class='pills' data-id='<%=el._id%>'>
+            <a href="/pills/<%=el._id %>"><span><%= el.name %></span>
+            </a>
+           <span><%= el.total%></span>
+           <form 
+           action="/pills/updatePill/<%=el._id%>?_method=PUT" method="POST">
+            <button>Take</button>
+           </form>
+            <form action="/pills/deletePills/<%=el._id%>?_method=DELETE" method="POST">
+                <button>Delete</button>
+            </form>
+            <a href="/pills/editPill/<%=el._id%>" method="POST">
+                <button>Edit</button>
+            </a>
         </li>
     <% }) %>    
     </ul>
 
+    <a href="/pills/add"><button>Create a New Pill</button></a>
    
     <!-- <form action="/todos/createTodo" method='POST'>
         <input type="text" placeholder="Enter Todo Item" name='todoItem'>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditrakk Form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Pills</h1>
+   
+
+   
+    <form action="/pills/<%=pill._id%>?_method=PUT"" method='POST'>
+        <label for="name">Pill Name:</label>
+        <input type="text" placeholder="Enter Medication" name='name' value="<%=pill.name%>">
+        <label for="Dosage">Pill Dosage:</label>
+        <input type="text" name="dosage" placeholder="Dosage" value="<%=pill.dosage%>">
+        <label for="frequency">Frequency:</label>
+        <input type="text" placeholder="Frequency" name="frequency" value="<%=pill.frequency%>">
+        <label for="number">Number of pills:</label>
+        <input type="text" placeholder="Number of Pills" name="number" value="<%=pill.frequency%>">
+        <label for="total">Total pills:</label>
+        <input type="text" placeholder="Total Pills" name="total" value="<%=pill.total%>">
+        <label for="ailment">Ailment:</label>
+        <input type="text" placeholder="Ailment" name="ailment" value="<%=pill.ailment%>">
+        <label for="start">Start Date:</label>
+        <input type="date" name="start" value="<%=pill.start%>">
+        <label for="end">End Date:</label>
+        <input type="date" name="end" value="<%=pill.end%>">
+        
+        <input type="submit">
+    </form>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

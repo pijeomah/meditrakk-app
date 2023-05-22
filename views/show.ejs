@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditrakk</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2><%= pills.name %></h2>
+    <p>Dosage: <%=pills.dosage %></p>
+    <p>Frequency: <%=pills.frequency %></p>
+    <p>Number of pills: <%=pills.number %></p>
+    <p>Total Pills: <%=pills.total %></p>
+    <p>Start Date: <%=pills.start %></p>
+    <p>End Date: <%=pills.end %></p>
+    <p>ailment: <%=pills.ailment %></p>
+    
+    <a href="/editPill/<%=pills._id%>"><button>Edit Pill</button></a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

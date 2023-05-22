@@ -1,17 +1,17 @@
 const mongoose = require('mongoose')
 
 const PillSchema = new mongoose.Schema({
-    pillName:{
+    name:{
         type: String,
         required: true,
     },
 
-    pillDosage:{
+    dosage:{
         type: String,
         required: true,
     },
 
-    pillFrequency:{
+    frequency:{
         type: String,
         required: true,
     },
@@ -20,7 +20,32 @@ const PillSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    
+
+    ailment: {
+        type: String,
+        required: true
+    },
+
+    number: {
+        type:Number,
+        required: false,
+    },
+    start:{
+        type: Date,
+        required: false,
+    },
+    end: {
+        type: Date,
+        required: false
+    }, 
+    total: {
+        type: Number,
+        required: true
+    },
+    userId: {
+        type: String,
+        required: true
+    }   
 })
 
 module.exports = mongoose.model("Pill", PillSchema)

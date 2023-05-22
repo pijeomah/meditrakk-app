@@ -13,9 +13,23 @@
 
    
     <form action="/pills/createPill" method='POST'>
-        <input type="text" placeholder="Enter Medication" name='pills'>
-        <input type="text" name="pills" placeholder="Dosage">
-        <input type="text" placeholder="Frequency">
+        <label for="name"> Name:</label>
+        <input type="text" placeholder="Enter Medication" name='name'>
+        <label for="Dosage"> Dosage:</label>
+        <input type="text" name="dosage" placeholder="Dosage">
+        <label for="frequency">Frequency:</label>
+        <input type="text" placeholder="Frequency" name="frequency">
+        <label for="number">Number of pills:</label>
+        <input type="text" placeholder="Number of Pills" name="number">
+        <label for="total">Total pills:</label>
+        <input type="text" placeholder="Total Pills" name="total">
+        <label for="ailment">Ailment:</label>
+        <input type="text" placeholder="Ailment" name="ailment">
+        <label for="start">Start Date:</label>
+        <input type="date" name="start">
+        <label for="end">End Date:</label>
+        <input type="date" name="end">
+        
         <input type="submit">
     </form>
 

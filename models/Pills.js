@@ -42,10 +42,10 @@ const PillSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    userId: {
-        type: String,
-        required: true
-    }   
+   // userId: {
+        // type: String,
+     //   required: true
+    //}   
 })
 
 module.exports = mongoose.model("Pill", PillSchema)

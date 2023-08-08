@@ -3,8 +3,8 @@ const Pills = require('../models/Pills')
 module.exports ={
     getPills: async(req,res) => {
         try {
-            const pills = await Pills.find({userId: req.user.id})
-            res.render('pills.ejs', {pills: pills, user:req.user.id})
+            const pills = await Pills.find()
+            res.render('pills.ejs', {pills: pills})
         } catch (err) {
             console.log(err)
         }
@@ -12,6 +12,7 @@ module.exports ={
     createPill: async (req, res)=>{
         console.log(req)
                 try{
+                    //const userId = req.user.id
                     const pillName =  req.body.name
                     const pillDosage =req.body.dosage
                     const pillFrequency = req.body.frequency
@@ -28,7 +29,8 @@ module.exports ={
                         start: pillStart,
                         end: pillEnd,
                         ailment: ailment,
-                        total: pillTotal
+                        total: pillTotal,
+                        //userId: userId
                         })
                     console.log()
                     res.redirect('/pills')
@@ -36,17 +38,17 @@ module.exports ={
                     console.log(err)
                 }
             },
-    addPill: async(req,res) =>{
+    getForm: async(req,res) =>{
         res.render('form.ejs')
     },
 
-    showPillInfo: async(req,res)=>{
+    viewPillInfo: async(req,res)=>{
         try {
             let pills = await Pills.findById(req.params.id).lean()
             if(!pills){
                 return res.render("Nothing to see here")
             }else{
-                return res.render('show.ejs', {pills: pills})
+                return res.render('view.ejs', {pills: pills})
             }
             
         } catch (err) {

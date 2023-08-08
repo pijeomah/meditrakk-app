@@ -6,10 +6,10 @@ const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 //pill routes
 router.get("/", ensureAuth, pillController.getPills)
-router.get("/add", pillController.addPill)
+router.get("/form", pillController.getForm)
 router.post("/createPill", pillController.createPill)
 router.put('/updatePill/:id', pillController.updatePill)
-router.get("/:id", pillController.showPillInfo)
+router.get("/view/:id", pillController.viewPillInfo)
 router.delete('/deletePills/:id', pillController.deletePills)
 router.get("/editPill/:id", pillController.editPill)
  router.put('/:id', pillController.upgradePill)

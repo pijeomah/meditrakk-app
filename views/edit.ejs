@@ -1,38 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meditrakk Form</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <h1>Pills</h1>
-   
-
-   
-    <form action="/pills/<%=pill._id%>?_method=PUT"" method='POST'>
-        <label for="name">Pill Name:</label>
-        <input type="text" placeholder="Enter Medication" name='name' value="<%=pill.name%>">
-        <label for="Dosage">Pill Dosage:</label>
-        <input type="text" name="dosage" placeholder="Dosage" value="<%=pill.dosage%>">
-        <label for="frequency">Frequency:</label>
-        <input type="text" placeholder="Frequency" name="frequency" value="<%=pill.frequency%>">
-        <label for="number">Number of pills:</label>
-        <input type="text" placeholder="Number of Pills" name="number" value="<%=pill.frequency%>">
-        <label for="total">Total pills:</label>
-        <input type="text" placeholder="Total Pills" name="total" value="<%=pill.total%>">
-        <label for="ailment">Ailment:</label>
-        <input type="text" placeholder="Ailment" name="ailment" value="<%=pill.ailment%>">
-        <label for="start">Start Date:</label>
-        <input type="date" name="start" value="<%=pill.start%>">
-        <label for="end">End Date:</label>
-        <input type="date" name="end" value="<%=pill.end%>">
+<%- include ('partials/_head') %>  
+<%- include ('partials/_nav') %>
+    <div class="w-3/5 h mt-8 mx-auto rounded-lg shadow-lg">
+        <h1 class="text-3xl capitalize mb-5"><%=pill.name%></h1>
+    <form action="/pills/<%=pill._id%>?_method=PUT" method='POST'>
+        <label for="name" class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Pill Name:</label>
+        <input type="text" placeholder="Enter Medication" name='name' value="<%=pill.name%>" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-10">
+        <label for="Dosage" class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Pill Dosage:</label>
+        <input type="text" name="dosage" placeholder="Dosage" value="<%=pill.dosage%>" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-10">
+        <label for="frequency" class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Frequency:</label>
+        <input type="text" placeholder="Frequency" name="frequency" value="<%=pill.frequency%>" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-10">
+        <label for="number" class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Number of pills:</label>
+        <input type="text" placeholder="Number of Pills" name="number" value="<%=pill.frequency%>" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-10">
+        <label for="total" class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Total pills:</label>
+        <input type="text" placeholder="Total Pills" name="total" value="<%=pill.total%>" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-10">
+        <label for="ailment" class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Ailment:</label>
+        <input type="text" placeholder="Ailment" name="ailment" value="<%=pill.ailment%>" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-10">
+        <label for="start" class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Start Date:</label>
+        <input type="date" name="start" value="<%=pill.start%>" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-10">
+        <label for="end" class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">End Date:</label>
+        <input type="date" name="end" value="<%=pill.end%>" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-10">
         
-        <input type="submit">
+        <input type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block ml-10 mt-4">
     </form>
 
     <script src="js/main.js"></script>
-</body>
-</html>
+    </div>
+    
+ 

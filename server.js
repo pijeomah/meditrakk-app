@@ -5,11 +5,15 @@ const passport = require('passport')
 const session = require('express-session')
 const morgan = require('morgan')
 const flash = require('express-flash')
+const nodeMailer = require('nodemailer')
+const cron = require('node-cron')
 const MongoStore = require('connect-mongo')
 const methodOverride = require('method-override')
 const connectDB = require('./config/database')
 const pillRoutes = require('./routes/pills')
 const mainRoutes = require('./routes/main')
+const reminderRoutes = require('./routes/reminder')
+
 
 //Env path in config dir
 require("dotenv").config({path: "./config/.env"})
@@ -56,6 +60,7 @@ app.use(methodOverride("_method"));
 //set up the middleware for the routes which the server is listening
 app.use("/pills", pillRoutes)
 app.use('/', mainRoutes)
+app.use('/reminder' , reminderRoutes)
 
 
 

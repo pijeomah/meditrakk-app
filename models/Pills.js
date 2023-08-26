@@ -12,7 +12,7 @@ const PillSchema = new mongoose.Schema({
     },
 
     frequency:{
-        type: String,
+        type: Number,
         required: true,
     },
 
@@ -42,10 +42,11 @@ const PillSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-   // userId: {
-        // type: String,
-     //   required: true
-    //}   
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true
+      }
 })
 
 module.exports = mongoose.model("Pill", PillSchema)

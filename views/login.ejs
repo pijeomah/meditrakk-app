@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<%- include ('partials/_head') %> 
+<%- include ('partials/_nav') %>
 <body>
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
@@ -17,10 +11,12 @@
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
-    <form action="/login" method="POST">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
-    </form>
-</body>
-</html>
+    <div class="w-2/6 mt-8 mx-auto rounded-lg shadow-lg h-48">
+        <form action="/login" method="POST">
+            <input type="email" name="email" placeholder="Email" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-10 block mb-7">
+            <input type="password" name="password" placeholder="Password" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-10 block">
+            <input type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block mt-4 ml-10">
+        </form>
+    </div>
+    
+

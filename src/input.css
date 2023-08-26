@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    body::before{
+      display: block;
+      content: '';
+      height: 56px;
+    }
+    #links .active{
+      @apply text-gray-200
+    }
+  }
+
+  
+  /* *{
+    border: 1px solid red;
+  }  */

@@ -120,7 +120,8 @@ const sendEmailReminder = async (req, res) => {
       }
     });
 
-    res.status(200).send('Reminder emails scheduled successfully.');
+    res.status(200).send('Reminder emails scheduled successfully.')
+    res.redirect('/pills');
   } catch (error) {
     console.error('Error sending email:', error);
     res.status(500).send('Error sending email.');

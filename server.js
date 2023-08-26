@@ -32,14 +32,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 //Logging dev activity
 app.use(morgan('dev'))
-
+console.log('DB_STRING:', process.env.DB_STRING)
 //Setup sessions in MongoDB
 app.use(session({
     secret:"secret",
     cookie:{maxAge:60000},
     resave:false,
     saveUninitialized:false,
-    store: MongoStore.create({mongoUrl:process.env.DB_STRING}
+    store: MongoStore.create({mongoUrl: process.env.DB_STRING}
         ),
     })
 )

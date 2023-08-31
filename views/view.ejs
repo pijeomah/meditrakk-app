@@ -1,13 +1,28 @@
 <%- include ('partials/_head') %> 
 <%- include ('partials/_nav') %>
+<%
+function formatDate(date, format) {
+    const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        timeZoneName: 'short'
+    };
+
+    return new Intl.DateTimeFormat('en-US', options).format(new Date(date));
+}
+
+%>
 <div class="w-2/5 mt-8 mx-auto rounded-lg shadow-lg">
     <h2 class="text-3xl capitalize mb-5 ml-10"><%= pills.name %></h2>
     <p class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Dosage: <%=pills.dosage %></p>
     <p class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Frequency: <%=pills.frequency %></p>
     <p class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Number of pills: <%=pills.number %></p>
     <p class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Total Pills: <%=pills.total %></p>
-    <p class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Start Date: <%=pills.start %></p>
-    <p class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">End Date: <%=pills.end %></p>
+    <p class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Start Date: <%= formatDate(pills.start, 'MMMM Do YYYY, h:mm a') %></p>
+    <p class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">End Date: <%= formatDate(pills.end) %></p>
     <p class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">ailment: <%=pills.ailment %></p>
     
     <a href="pills/editPill/<%=pills._id%>"><button class=
@@ -16,5 +31,22 @@
 </div>
     
 
+<script>
+    // Function to format a JavaScript Date object as a user-friendly date and time
+    function formatDate(date) {
+        const options = {
+            weekday: 'long', // Day of the week (Wednesday)
+            year: 'numeric', // Year (2023)
+            month: 'long', // Month (August)
+            day: 'numeric', // Day of the month (16)
+            hour: '2-digit', // Hour in 2-digit format (01)
+            minute: '2-digit', // Minute in 2-digit format (00)
+            second: '2-digit', // Second in 2-digit format (00)
+            timeZoneName: 'short' // Time zone abbreviation (GMT+1)
+        };
+        
+        return new Date(date).toLocaleString('en-US', options);
+    }
+    </script>
     <script src="js/main.js"></script>
 

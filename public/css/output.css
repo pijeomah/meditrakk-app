@@ -729,11 +729,6 @@ body::before{
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
-.bg-green-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
-}
-
 .bg-slate-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
@@ -867,9 +862,9 @@ body::before{
   transition-duration: 500ms;
 }
 
-*{
-  border: 1px solid red;
-}
+/* *{
+    border: 1px solid red;
+  }  */
 
 .hover\:border-transparent:hover {
   border-color: transparent;
@@ -938,4 +933,4 @@ body::before{
     padding-left: 4rem;
     padding-right: 4rem;
   }
-} 
+}

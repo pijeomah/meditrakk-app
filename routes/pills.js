@@ -12,6 +12,6 @@ router.put('/updatePill/:id', pillController.updatePill)
 router.get("/view/:id", pillController.viewPillInfo)
 router.delete('/deletePills/:id', pillController.deletePills)
 router.get("/editPill/:id", pillController.editPill)
-//router.put('/:id', pillController.upgradePill)
+router.put('/:id', pillController.upgradePill)
 
 module.exports = router

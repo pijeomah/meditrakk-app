@@ -1,6 +1,6 @@
 <%- include ('partials/_head') %>  
 <%- include ('partials/_nav') %>
-    <div class="w-3/5 h mt-8 mx-auto rounded-lg shadow-lg">
+    <div class=" w-full lg:w-3/5 h mt-8 mx-auto rounded-lg shadow-lg">
         <h1 class="text-3xl capitalize mb-5"><%=pill.name%></h1>
     <form action="/pills/<%=pill._id%>?_method=PUT" method='POST'>
         <label for="name" class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Pill Name:</label>
@@ -20,7 +20,7 @@
         <label for="end" class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">End Date:</label>
         <input type="date" name="end" value="<%=pill.end%>" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-10">
         
-        <input type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block ml-10 mt-4">
+        <input type="submit" class="bg-green-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block ml-10 mt-4">
     </form>
 
     <script src="js/main.js"></script>

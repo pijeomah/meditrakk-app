@@ -128,25 +128,25 @@ module.exports ={
         }
 },
 
-// upgradePill: async(req,res)=>{
-//         try {
-//             let pill = await Pills.findById(req.params.id).lean()
+upgradePill: async(req,res)=>{
+        try {
+            let pill = await Pills.findById(req.params.id).lean()
 
             
-//         if(!pill) {
-//             return res.render('error/404')
-//         }
-//             else{
-//                 pill= await Pills.findOneAndUpdate({_id: req.params.id},  req.body, {
-//                     new: true,
-//                     runValidators: true
-//                 })
-//                 res.redirect('/pills')
-//             }
+        if(!pill) {
+            return res.render('error/404')
+        }
+            else{
+                pill= await Pills.findOneAndUpdate({_id: req.params.id},  req.body, {
+                    new: true,
+                    runValidators: true
+                })
+                res.redirect('/pills')
+            }
             
 
-//         } catch (err) {
-//             console.log(err)
-//         }
-// }
+        } catch (err) {
+            console.log(err)
+        }
+}
 }

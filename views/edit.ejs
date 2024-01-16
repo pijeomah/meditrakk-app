@@ -2,7 +2,7 @@
 <%- include ('partials/_nav') %>
     <div class=" w-full lg:w-3/5 h mt-8 mx-auto rounded-lg shadow-lg">
         <h1 class="text-3xl capitalize mb-5"><%=pill.name%></h1>
-    <form action="/pills/<%=pill._id%>?_method=PUT" method=''>
+    <form action="/pills/<%=pill._id%>?_method=PUT" method='POST'>
         <label for="name" class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Pill Name:</label>
         <input type="text" placeholder="Enter Medication" name='name' value="<%=pill.name%>" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-10">
         <label for="Dosage" class="block text-gray-700 text-0.5xl font-bold mb-2 ml-10">Pill Dosage:</label>

@@ -13,11 +13,12 @@
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
-    <div class=" w-full lg:w-2/6 mt-8 mx-auto rounded-lg shadow-lg h-48 ">
-        <form action="/login" method="POST">
-            <input type="email" name="email" placeholder="Email" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-10 block mb-7">
-            <input type="password" name="password" placeholder="Password" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ml-10 block">
-            <input type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block mt-4 ml-10">
+    <div class=" w-full lg:w-2/6 mt-8 mx-auto rounded-lg shadow-lg  ">
+        <form action="/login" method="POST" class="flex flex-col items-center h-96 py-2">
+            <h1 class="text-xl mb-5">Log In and Track Your Meds</h1>
+            <input type="email" name="email" placeholder="Email" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline  block mb-7">
+            <input type="password" name="password" placeholder="Password" class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline  block">
+            <input type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block mt-4">
         </form>
     </div>
     

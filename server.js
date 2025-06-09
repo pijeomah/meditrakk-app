@@ -28,6 +28,7 @@ const mainRoutes = require('./routes/main')
 // variable assigned to importing main routes
 const reminderRoutes = require('./routes/reminder')
 // variable assigned to importing reminder routes
+const dashboardRoutes = require('./routes/dashboard')
 
 //Env path in config dir
 require("dotenv").config({path: "./config/.env"})
@@ -97,6 +98,7 @@ app.use(methodOverride("_method"));
 app.use("/pills", pillRoutes)
 app.use('/', mainRoutes)
 app.use('/reminder' , reminderRoutes)
+app.use('/dashboard', dashboardRoutes)
 
 
 // listening for actions on the PORT and logging a message to the pORT

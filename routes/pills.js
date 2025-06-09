@@ -9,9 +9,9 @@ const pillController = require('../controllers/pills')
 
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 // importing and destructuring middeware providing security to the routes
-
+console.log(ensureAuth)
 //pill routes
-router.get('/dashboard', pillController.getDashboard)
+router.get('/', pillController.getPills)
 
 // route to access the main pills route which authenticates the user and gives them access to all their pills
 router.get("/form", ensureAuth, pillController.getForm)

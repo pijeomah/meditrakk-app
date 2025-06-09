@@ -6,7 +6,7 @@ const User = require('../models/User')
 // imports the user model to intercact with the users collection in MangoDB
  exports.getLogin = (req, res) => {
     if (req.user) {
-      return res.redirect('pills/dashboard')
+      return res.redirect('/pills')
       // if the req.user is true(user is logged in) then the user is redirected to the pills page
     }
     res.render('login', {
@@ -58,7 +58,7 @@ const User = require('../models/User')
           req.logIn(user, (err) => {
             if (err) return next(err)
             req.flash('success', {msg: 'Success! You are logged in.'})
-            res.redirect(req.session.returnTo || 'pills/dashboard')
+            res.redirect(req.session.returnTo || '/pills')
             });
   })(req, res, next);
 };
@@ -85,7 +85,7 @@ const User = require('../models/User')
   exports.getSignup = (req, res) => {
     // export the getsignUp function and to handle GET request request for the sign up page 
     if (req.user) {
-      return res.redirect('pills/dashboard')
+      return res.redirect('/pills')
       // if user is already signed up redirect the =m to the pills page
     }
     res.render('signup', {
@@ -135,7 +135,7 @@ const User = require('../models/User')
           if (err) return next(err);
           // after saving the user the passport login method is used to login to the app and the user is redirected to the pills dashboard
           req.flash('Success', {msg: "Account created successfully"})
-          res.redirect('pills/dashboard');
+          res.redirect('/pills');
         });
       }
       })

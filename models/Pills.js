@@ -19,11 +19,8 @@ const PillSchema = new mongoose.Schema({
         required: true,
     },
         // frequency refers to the number of times the drug is to be taken data type is number and it is required
-    takenAt: {
-        type: Date,
-        default: Date.now,
-    },
-            // the takenAt refers to the day when the pill is taken
+    
+           
     ailment: {
         type: String,
         required: true
@@ -41,11 +38,7 @@ const PillSchema = new mongoose.Schema({
         required: false,
         // START DATE OF TAKING THE PILLS NOT REQUIRED AND THE DATA TYPE IS DATE 
     },
-    end: {
-        type: Date,
-        required: false
-         // END DATE OF TAKING THE PILLS NOT REQUIRED AND THE DATA TYPE IS DATE 
-    }, 
+ 
     total: {
         type: Number,
         required: true
@@ -56,7 +49,7 @@ const PillSchema = new mongoose.Schema({
         ref: "User",
         required: true
         // USER FIELD HAS A TYPE OF OBJECTID USED TO IDENTIFY THE USER MAKING AN ENTRY INTO THE DATABASE, IT IS REQUIRED AND IT IS REFERENCED FROM THE USER MODEL
-      }
+      }, 
 })
 
 module.exports = mongoose.model("Pill", PillSchema)

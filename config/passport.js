@@ -18,8 +18,7 @@ const User = require('../models/User')
 //         if (isMatch) {
 //           return done(null, user)
 //         }
-//         return done(null, false, { msg: 'Invalid email or password.' })
-//       })
+//       
 //     })
 //   }))
 module.exports = function (passport) {
